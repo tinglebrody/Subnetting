@@ -37,16 +37,12 @@ def addresses(address, hosts):
     addresses = {}
     address = ipaddress.IPv4Address(address)
     addresses["network"] = str(address) + '/' + str(mask)
-    addresses["first"] = str(address + 1) + '/' + str(mask)
-    addresses["last"] = str(address + allowed_hosts-2) + '/' + str(mask)
     addresses["broadcast"] = str(address + allowed_hosts-1) + '/' + str(mask)
     addresses["next"] = str(address + allowed_hosts)
     return addresses
 
 def print_addresses(addresses):
     print("Network: " + addresses["network"])
-    print("First Usable: " + addresses["first"])
-    print("Last Usable: " + addresses["last"])
     print("Broadcast: " + addresses["broadcast"])
     
 def network_addresses(address, hosts_list):
@@ -60,8 +56,6 @@ def network_addresses(address, hosts_list):
 
 def summary(address_book):
     for key in address_book:
-        print("\nVLAN " + str(key))
+        print("\nLAN " + str(key))
         print("Network: " + address_book[key]["network"])
-        print("First Usable: " + address_book[key]["first"])
-        print("Last Usable: " + address_book[key]["last"])
         print("Broadcast: " + address_book[key]["broadcast"] + '\n')
