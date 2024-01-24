@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simplesubnet"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Brody Tingle <brodyleehumphrey@gmail.com>"]
 readme = "README.md"
